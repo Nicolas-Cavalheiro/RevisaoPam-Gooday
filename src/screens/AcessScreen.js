@@ -5,7 +5,7 @@ const AcessScreen = ({ navigation }) => {
     return(
         <View style = {styles.container}>
             <Image source = {require('../../images/imagens/casual_dog.png')} style = {styles.imagem}/>
-            <Text style = {styles.textoGrande}>Ótimo Dia!</Text>
+            <Text style = {styles.textoGrande}>Ótimo dia!</Text>
             <Text style = {styles.textoPequeno}>Como deseja acessar?</Text>
             <Button 
                 style = {styles.botao}
