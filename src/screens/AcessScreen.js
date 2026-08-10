@@ -19,6 +19,7 @@ const AcessScreen = ({ navigation }) => {
                 style = {styles.botao2}
                 texto = "Outras opções"
                 textStyle = {styles.textStyle2}
+                onPress = {() => navigation.navigate('sign')}
             />
         </View>
     )
