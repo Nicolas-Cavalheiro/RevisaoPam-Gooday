@@ -21,19 +21,27 @@ const SignScreen = ({ navigation }) => {
                 style = {styles.input}
                 />
                 <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250, marginTop: 10,}}>Senha</Text>
+
+                <View style = {{width: 250, alignItems: 'center', justifyContent: 'center'}}>
                 <TextInput
                 placeholderTextColor = '#2F414F'
                 placeholder = "Digite sua senha"
                 secureTextEntry = {true}
                 style = {styles.input}
                 />
+                <Image source = {require('../../images/olho.png')} style = {{position: 'absolute', marginLeft: 200}}/>
+                </View>
+
                 <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250, marginTop: 10,}}>Repita sua senha</Text>
+                <View style = {{width: 250, alignItems: 'center', justifyContent: 'center'}}>
                 <TextInput
                 placeholderTextColor = '#2F414F'
                 placeholder = "Digite sua senha"
                 secureTextEntry = {true}
                 style = {styles.input}
                 />
+                <Image source = {require('../../images/olho.png')} style = {{position: 'absolute', marginLeft: 200}}/>
+                </View>
                 
                 <View>
                     <Button
@@ -81,5 +89,5 @@ const styles = StyleSheet.create({
     },
     textoBotao: {
         color: '#FFFFFF'
-    }
+    },
 })
