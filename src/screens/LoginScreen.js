@@ -11,20 +11,20 @@ const LoginScreen = ({ navigation }) => {
             <TouchableOpacity style = {{width: 250, alignSelf: 'center', marginTop: 30,}} onPress = {() => navigation.goBack()}>
                 <Image source = {require('../../images/setaVerde.png')}/>
             </TouchableOpacity>
-            <View style = {{alignItems: 'center', margin: 15}}>
-            <Text style = {{color: '#2F414F', fontSize: 40, width: 250, textAlign: 'left'}}>Acesse</Text>
-            <Text style = {{color: '#2F414F', fontSize: 20, width: 250, textAlign: 'left'}}>com E-mail e senha</Text>
+            <View style = {styles.containerTitulo}>
+            <Text style = {[styles.texto, {fontSize: 40}]}>Acesse</Text>
+            <Text style = {[styles.texto, {fontSize: 20}]}>com E-mail e senha</Text>
             </View>
 
-            <View style = {{alignItems: 'center', margin: 20}}>
-            <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250,}}>E-mail</Text>
+            <View style = {styles.containerInput}>
+            <Text style = {[styles.texto, {fontSize: 15}]}>E-mail</Text>
             <TextInput
             placeholderTextColor = '#2F414F'
             placeholder = "Digite seu E-mail"
             style = {styles.input}
             />
-            <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250, marginTop: 10,}}>Senha</Text>
-            <View style = {{width: 250, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style = {[styles.texto, {fontSize: 15, marginTop: 10}]}>Senha</Text>
+            <View style = {styles.olho}>
             <TextInput
             placeholderTextColor = '#2F414F'
             placeholder = "Digite sua senha"
@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
             />
             <Image source = {require('../../images/olho.png')} style = {{position: 'absolute', marginLeft: 200}}/>
             </View>
-            <View style = {{flexDirection: 'row', alignItems: 'center',width: 250,}}>
+            <View style = {styles.containerCheckbox}>
             <Checkbox
                 value = {isChecked}
                 onValueChange = {setChecked}
@@ -44,7 +44,7 @@ const LoginScreen = ({ navigation }) => {
             </View>
             </View>
 
-            <View style = {{flexDirection:'row', alignItems: 'center', justifyContent: 'center',}}>
+            <View style = {styles.containerBotao}>
             <Button
             texto = "Acessar"
             style = {styles.acessar}
@@ -58,13 +58,13 @@ const LoginScreen = ({ navigation }) => {
             />
             </View>
 
-            <View style = {{alignItems: 'center', marginTop: 70, flexDirection: 'row', justifyContent: 'center'}}>
-            <View style = {{height: 1, width: 79, backgroundColor: '#2F414F'}}/>
+            <View style = {styles.containerLinha}>
+            <View style = {styles.linha}/>
             <Text style = {{marginHorizontal: 5,}}>Ou continue com</Text>
-            <View style = {{height: 1, width: 79, backgroundColor: '#2F414F'}}/>
+            <View style = {styles.linha}/>
             </View>
 
-            <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
+            <View style = {styles.containerImagens}>
             <Image source = {require('../../images/imagens/Google.png')} style = {{margin: 10,}}/>
             <Image source = {require('../../images/imagens/Facebook.png')} style = {{margin: 10,}}/>
             </View>
@@ -111,5 +111,49 @@ const styles = StyleSheet.create({
         backgroundColor: '#E4E4F4',
         borderRadius: 5,
         paddingHorizontal: 10,
-    }
+    },
+    containerTitulo: {
+        alignItems: 'center',
+        margin: 15,
+    },
+    texto: {
+        color: '#2F414F',
+        width: 250, 
+        textAlign: 'left',
+    },
+    containerInput: {
+        alignItems: 'center', 
+        margin: 20,
+    },
+    olho: {
+        width: 250, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+    },
+    containerCheckbox: {
+        flexDirection: 'row', 
+        alignItems: 'center',
+        width: 250,
+    },
+    containerBotao: {
+        flexDirection:'row', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+    },
+    containerLinha: {
+        alignItems: 'center', 
+        marginTop: 70, 
+        flexDirection: 'row', 
+        justifyContent: 'center',
+    },
+    linha: {
+        height: 1, 
+        width: 79, 
+        backgroundColor: '#2F414F',
+    },
+    containerImagens: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+    },
 })
