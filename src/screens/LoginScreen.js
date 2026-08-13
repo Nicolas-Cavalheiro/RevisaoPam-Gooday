@@ -5,6 +5,21 @@ import { Checkbox } from 'expo-checkbox';
 
 const LoginScreen = ({ navigation }) => {
     const [isChecked, setChecked] = useState(false);
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const loginEmail = "nicolas@gmail.com";
+    const loginSenha = "123";
+    const [resultadoLogin, setresultadoLogin] = useState('');
+
+    function verificarLogin(){
+        if (email == loginEmail && senha == loginSenha){
+            console.log("login correto")
+            setresultadoLogin("Login correto")
+        } else {
+            console.log("login incorreto")
+            setresultadoLogin("Login incorreto")
+        }
+    }
 
     return (
         <View style = {styles.container}>
@@ -22,6 +37,8 @@ const LoginScreen = ({ navigation }) => {
             placeholderTextColor = '#2F414F'
             placeholder = "Digite seu E-mail"
             style = {styles.input}
+            value = {email}
+            onChangeText = {setEmail}
             />
             <Text style = {[styles.texto, {fontSize: 15, marginTop: 10}]}>Senha</Text>
             <View style = {styles.olho}>
@@ -30,6 +47,8 @@ const LoginScreen = ({ navigation }) => {
             placeholder = "Digite sua senha"
             secureTextEntry = {true}
             style = {styles.input}
+            value = {senha}
+            onChangeText = {setSenha}
             />
             <Image source = {require('../../images/olho.png')} style = {{position: 'absolute', marginLeft: 200}}/>
             </View>
@@ -49,6 +68,7 @@ const LoginScreen = ({ navigation }) => {
             texto = "Acessar"
             style = {styles.acessar}
             textStyle = {styles.textoAcessar}
+            onPress = {verificarLogin} 
             />
             <Button
             texto = "Cadastrar"
@@ -56,6 +76,10 @@ const LoginScreen = ({ navigation }) => {
             textStyle = {styles.textoCadastrar}
             onPress = {() => navigation.navigate('sign')}
             />
+            </View>
+            
+            <View style = {styles.respostaLogin}>
+            {resultadoLogin ?? <Text style = {styles.textoLogin}>{resultadoLogin}</Text>}
             </View>
 
             <View style = {styles.containerLinha}>
@@ -142,7 +166,7 @@ const styles = StyleSheet.create({
     },
     containerLinha: {
         alignItems: 'center', 
-        marginTop: 70, 
+        marginTop: 30, 
         flexDirection: 'row', 
         justifyContent: 'center',
     },
@@ -155,5 +179,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         alignItems: 'center', 
         justifyContent: 'center',
+    },
+    respostaLogin: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40,
     },
 })
