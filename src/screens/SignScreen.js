@@ -9,38 +9,38 @@ const SignScreen = ({ navigation }) => {
                 <Image source = {require('../../images/setaVerde.png')}/>
             </TouchableOpacity>
             <View style = {{alignItems: 'center', margin: 15}}>
-            <Text style = {{color: '#2F414F', fontSize: 40, width: 250, textAlign: 'left'}}>Cadastre-se</Text>
-            <Text style = {{color: '#2F414F', fontSize: 15, width: 250, textAlign: 'left'}}>informe seu E-mail e crie uma senha</Text>
+            <Text style = {[styles.texto, {fontSize: 40}]}>Cadastre-se</Text>
+            <Text style = {[styles.texto, {fontSize: 15}]}>informe seu E-mail e crie uma senha</Text>
             </View>
 
             <View style = {{alignItems: 'center', margin: 20}}>
-                <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250,}}>E-mail</Text>
+                <Text style = {[styles.texto, {fontSize: 15}]}>E-mail</Text>
                 <TextInput
                 placeholderTextColor = '#2F414F'
                 placeholder = "Digite seu E-mail"
                 style = {styles.input}
                 />
-                <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250, marginTop: 10,}}>Senha</Text>
+                <Text style = {[styles.texto, {fontSize: 15, marginTop: 10}]}>Senha</Text>
 
-                <View style = {{width: 250, alignItems: 'center', justifyContent: 'center'}}>
+                <View style = {styles.containerOlho}>
                 <TextInput
                 placeholderTextColor = '#2F414F'
                 placeholder = "Digite sua senha"
                 secureTextEntry = {true}
                 style = {styles.input}
                 />
-                <Image source = {require('../../images/olho.png')} style = {{position: 'absolute', marginLeft: 200}}/>
+                <Image source = {require('../../images/olho.png')} style = {styles.olho}/>
                 </View>
 
-                <Text style = {{color: '#2F414F', fontSize: 15, textAlign: 'left', width: 250, marginTop: 10,}}>Repita sua senha</Text>
-                <View style = {{width: 250, alignItems: 'center', justifyContent: 'center'}}>
+                <Text style = {[styles.texto, {fontSize: 15, marginTop: 10}]}>Repita sua senha</Text>
+                <View style = {styles.containerOlho}>
                 <TextInput
                 placeholderTextColor = '#2F414F'
                 placeholder = "Digite sua senha"
                 secureTextEntry = {true}
                 style = {styles.input}
                 />
-                <Image source = {require('../../images/olho.png')} style = {{position: 'absolute', marginLeft: 200}}/>
+                <Image source = {require('../../images/olho.png')} style = {styles.olho}/>
                 </View>
                 
                 <View>
@@ -51,13 +51,13 @@ const SignScreen = ({ navigation }) => {
                     />
                 </View>
 
-                <View style = {{alignItems: 'center', margin: 10, flexDirection: 'row'}}>
-                    <View style = {{height: 1, width: 79, backgroundColor: '#2F414F'}}/>
+                <View style = {styles.containerLinha}>
+                    <View style = {styles.linha}/>
                     <Text style = {{marginHorizontal: 5,}}>Ou continue com</Text>
-                    <View style = {{height: 1, width: 79, backgroundColor: '#2F414F'}}/>
+                    <View style = {styles.linha}/>
                 </View>
 
-                <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
+                <View style = {styles.containerImagens}>
                     <Image source = {require('../../images/imagens/Google.png')} style = {{margin: 10,}}/>
                     <Image source = {require('../../images/imagens/Facebook.png')} style = {{margin: 10,}}/>
                 </View>
@@ -88,6 +88,35 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     textoBotao: {
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+    },
+    texto: {
+        color: '#2F414F', 
+        width: 250, 
+        textAlign: 'left',
+    },
+    containerOlho: {
+        width: 250, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+    },
+    olho: {
+        position: 'absolute', 
+        marginLeft: 200,
+    },
+    containerLinha: {
+        alignItems: 'center', 
+        margin: 10, 
+        flexDirection: 'row',
+    },
+    linha: {
+        height: 1, 
+        width: 79, 
+        backgroundColor: '#2F414F',
+    },
+    containerImagens: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'center',
     },
 })
