@@ -78,8 +78,8 @@ const LoginScreen = ({ navigation }) => {
             />
             </View>
             
-            <View style = {styles.respostaLogin}>
-            {resultadoLogin ?? <Text style = {styles.textoLogin}>{resultadoLogin}</Text>}
+            <View style = {resultadoLogin == "Login correto" ? styles.respostaLogin : styles.respostaFalha}>
+            {resultadoLogin ?? <Text>{resultadoLogin}</Text>}
             </View>
 
             <View style = {styles.containerLinha}>
@@ -183,6 +183,15 @@ const styles = StyleSheet.create({
     respostaLogin: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40,
+        marginTop: 35,
+        color: 'green',
+        fontSize: 20,
     },
+    respostaFalha: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 35,
+        color: 'red',
+        fontSize: 20,
+    }
 })
